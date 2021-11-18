@@ -1,0 +1,20 @@
+student=[]
+n=int(input("Enter Total Number Of Students: "))
+for i in range(n):
+  num=float(input("Enter Second Year Percentage Of Students: "))
+  student.append(num)
+print("List of Percentage of Students:",student,end=" ")
+def ShellSort(student,n):
+  k = n//2
+  while k > 0:
+    for i in range(k,n):
+      temp = student[i]
+      j = i
+      while(j >=k and student[j-k] >temp):
+        student[j] = student[j-k]
+        j=j-k
+      student[j] = temp
+    k = k//2
+ShellSort(student,n)
+print("\n Top five Scores-->>>>")
+print(student)
